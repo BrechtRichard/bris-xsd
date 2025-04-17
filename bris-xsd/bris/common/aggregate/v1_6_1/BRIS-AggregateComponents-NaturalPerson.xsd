@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/NaturalPerson"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacre="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"
+	targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/NaturalPerson"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"/>
+
+    <xsd:element name="NaturalPerson" type="NaturalPersonType" />
+
+	<xsd:complexType name="NaturalPersonType">
+		<xsd:sequence>
+			<xsd:element name="Name" type="bbc:PersonNameType"/>
+			<xsd:element name="Surname" type="bbc:PersonSurnameType"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="BirthDate" type="bbc:BirthDateType"/>
+				<xsd:element name="NationalPersonalIdentificationNumber" type="bbc:NationalPersonalIdentificationNumberType"/>
+			</xsd:choice>
+			<xsd:element ref="bacre:Representation"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

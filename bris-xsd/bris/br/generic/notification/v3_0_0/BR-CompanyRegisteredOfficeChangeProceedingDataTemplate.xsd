@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyRegisteredOfficeChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyRegisteredOfficeChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+
+	<xsd:element name="CompanyRegisteredOfficeChangeProceedingDataTemplate" type="CompanyRegisteredOfficeChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyRegisteredOfficeChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="FormerRegisteredOffice" type="bacad:AddressType"/>
+					<xsd:element name="NewRegisteredOffice" type="bacad:AddressType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderCompanyDetailsRequest"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bacusinf="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/UserInformation"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderCompanyDetailsRequest"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="4.0.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/UserInformation"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="BR-CrossBorderCompanyDetailsRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="bacusinf:UserInformation" minOccurs="0"/>
+				<xsd:element ref="bbc:CompanyRegistrationNumber" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>
+

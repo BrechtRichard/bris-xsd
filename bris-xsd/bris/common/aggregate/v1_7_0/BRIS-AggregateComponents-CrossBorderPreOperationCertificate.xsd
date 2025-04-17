@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCertificate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:baclr="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"
+	xmlns:baccd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCertificate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"/>
+
+	<xsd:element name="Certificate" type="CrossBorderPreOperationCertificateType"/>
+
+	<xsd:complexType name="CrossBorderPreOperationCertificateType">
+		<xsd:sequence>
+			<xsd:element name="CertificateDocument" type="baccd:CompanyDocumentType"/>
+			<xsd:element name="CompetentAuthority" type="bbc:DescriptionType"/>
+			<xsd:element ref="bbc:IssuanceDate"/>
+			<xsd:element ref="baclr:LegislationReferences" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

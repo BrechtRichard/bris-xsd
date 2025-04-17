@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionRegistrationNotificationTemplate"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+		xmlns:baccbrcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderRegistrationCompanyData"
+		xmlns:baccbfnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"
+		xmlns:baccbdrcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDivisionRegistrationCompanyData"
+		targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionRegistrationNotificationTemplate"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderRegistrationCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDivisionRegistrationCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"/>
+
+	<xsd:element name="CrossBorderDivisionRegistrationNotificationTemplate"
+				 substitutionGroup="gn:NotificationTemplate">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="baccbfnt:CrossBorderForwardedNotificationTemplateType">
+					<xsd:sequence>
+						<xsd:element name="DivisionCompanyDataList">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="DivisionCompanyData" type="baccbdrcd:CrossBorderDivisionRegistrationCompanyDataType" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="CrossBorderCompanyData" type="baccbrcd:CrossBorderRegistrationCompanyDataType"/>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

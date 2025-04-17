@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData"/>
+
+    <xsd:element name="CrossBorderCompanyData" type="CrossBorderCompanyDataType" />
+
+	<xsd:complexType name="CrossBorderCompanyDataType">
+		<xsd:complexContent>
+			<xsd:extension base="baccbscd:CrossBorderSimpleCompanyDataType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:RegisterDescription"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

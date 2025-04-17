@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Company"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+    xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	targetNamespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Company"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+
+    <xsd:element name="Company" type="CompanyType" />
+
+	<xsd:complexType name="CompanyType">
+		<xsd:sequence>
+			<xsd:element name="Names"> <!-- Implementation note: merged here because not referenced from anywhere else -->
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="bbc:QualifiedCompanyName" maxOccurs="unbounded" />
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element ref="bbc:CompanyRegistrationNumber" />
+			<xsd:element ref="bacad:RegisteredOffice" />
+			<xsd:element ref="bbc:LegalFormCode" />
+			<xsd:element ref="bbc:CompanyEUID" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

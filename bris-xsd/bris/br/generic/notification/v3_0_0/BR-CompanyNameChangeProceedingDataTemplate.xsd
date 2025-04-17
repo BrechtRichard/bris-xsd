@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyNameChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bacco="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyNameChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"/>
+
+	<xsd:element name="CompanyNameChangeProceedingDataTemplate" type="CompanyNameChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyNameChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="FormerCompanyNames" type="bacco:QualifiedCompanyNameListType"/>
+					<xsd:element name="NewCompanyNames" type="bacco:QualifiedCompanyNameListType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

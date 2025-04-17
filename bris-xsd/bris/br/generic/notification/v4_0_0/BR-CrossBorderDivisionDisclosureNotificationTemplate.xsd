@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionDisclosureNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:baccbcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"
+	xmlns:baccbnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+	xmlns:baccbacd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"
+	xmlns:bacd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+	targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionDisclosureNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="1">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"/>
+
+	<xsd:element name="CrossBorderDivisionDisclosureNotificationTemplate" substitutionGroup="gn:NotificationTemplate">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="baccbnt:CrossBorderNotificationTemplateType">
+					<xsd:sequence>
+						<xsd:element ref="baccbcd:CrossBorderCompanyData"/>
+						<xsd:element name="ProposedDivisionData">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:choice>
+										<xsd:element name="ArrangementsDocument" type="bacd:DocumentType"/>
+										<xsd:element name="AdditionalCompanyData" type="baccbacd:AdditionalCompanyDataType"/>
+									</xsd:choice>
+									<xsd:element ref="bbc:WebsiteDetails" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="ProposedCompanyData" type="baccbscd:CrossBorderSimplifiedCompanyDataType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

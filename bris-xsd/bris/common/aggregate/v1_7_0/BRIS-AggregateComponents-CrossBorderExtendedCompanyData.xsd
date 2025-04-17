@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bacc="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData"/>
+
+    <xsd:element name="CrossBorderExtendedCompanyData" type="CrossBorderExtendedCompanyDataType" />
+
+	<xsd:complexType name="CrossBorderExtendedCompanyDataType">
+		<xsd:complexContent>
+			<xsd:extension base="baccbscd:CrossBorderSimpleCompanyDataType">
+				<xsd:sequence>
+					<xsd:element ref="bacc:AlternateIdentifiers" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

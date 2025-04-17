@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/RegisterBranchNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:cnt="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"
+	xmlns:baccd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"
+	xmlns:bacbd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/BranchData"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/RegisterBranchNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/BranchData"/>
+
+	<xsd:element name="RegisterBranchNotificationTemplate" type="RegisterBranchNotificationTemplateType" substitutionGroup="gn:NotificationTemplate"/>
+
+	<xsd:complexType name="RegisterBranchNotificationTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="cnt:CompanyNotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element name="BranchData" type="bacbd:NewBranchDataType"/>
+					<xsd:element ref="baccd:CompanyData"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyLegalFormChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyLegalFormChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="CompanyLegalFormChangeProceedingDataTemplate" type="CompanyLegalFormChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyLegalFormChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="FormerCompanyLegalForm" type="bbc:CompanyLegalFormType" />
+					<xsd:element name="NewCompanyLegalForm" type="bbc:CompanyLegalFormType" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

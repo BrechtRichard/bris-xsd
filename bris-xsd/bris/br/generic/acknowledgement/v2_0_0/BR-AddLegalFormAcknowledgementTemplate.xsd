@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v2_0/br/AddLegalFormAcknowledgementTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ga="http://ec.europa.eu/bris/v2_0/br/GenericAcknowledgement"
+	targetNamespace="http://ec.europa.eu/bris/v2_0/br/AddLegalFormAcknowledgementTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericAcknowledgement"/>
+
+	<xsd:element name="AddLegalFormAcknowledgementTemplate" type="AddLegalFormAcknowledgementTemplateType" substitutionGroup="ga:AcknowledgementTemplate"/>
+
+	<xsd:complexType name="AddLegalFormAcknowledgementTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ga:AcknowledgementTemplateType">
+				<xsd:sequence/>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

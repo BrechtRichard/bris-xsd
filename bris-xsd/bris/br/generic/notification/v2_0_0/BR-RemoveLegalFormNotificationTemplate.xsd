@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v2_0/br/RemoveLegalFormNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v2_0/br/RemoveLegalFormNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="RemoveLegalFormNotificationTemplate" type="RemoveLegalFormNotificationTemplateType" substitutionGroup="gn:NotificationTemplate"/>
+
+	<xsd:complexType name="RemoveLegalFormNotificationTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="gn:NotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:LegalFormCode"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

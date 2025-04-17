@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_8/common/AggregateComponents/FurtherIdentificationData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacwad="http://ec.europa.eu/bris/v1_8/common/AggregateComponents/WorldwideAddress"
+	targetNamespace="http://ec.europa.eu/bris/v1_8/common/AggregateComponents/FurtherIdentificationData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_8/common/AggregateComponents/WorldwideAddress"/>
+
+    <xsd:element name="FurtherIdentificationData" type="FurtherIdentificationDataType" />
+
+	<xsd:complexType name="FurtherIdentificationDataType">
+		<xsd:sequence>
+			<xsd:element name="CategoryCode" type="bbc:CategoryCodeType"/>
+			<xsd:choice>
+				<xsd:element name="TextValue" type="bbc:DescriptionType"/>
+				<xsd:element name="DateValue" type="bbc:DateType"/>
+				<xsd:element name="IdentifierValue" type="bbc:IDType"/>
+				<xsd:element name="AddressValue" type="bacwad:WorldWideAddressType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

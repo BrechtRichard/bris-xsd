@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:cnt="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:baccd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"/>
+
+	<xsd:element name="UpdateParentCompanyNotificationTemplate" type="UpdateParentCompanyNotificationTemplateType" substitutionGroup="gn:NotificationTemplate"/>
+
+	<xsd:complexType name="UpdateParentCompanyNotificationTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="cnt:CompanyNotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element ref="ProceedingDataTemplate" />
+					<xsd:element name="CompanyData" type="baccd:SimplifiedCompanyDataType" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:element name="ProceedingDataTemplate" type="ProceedingDataTemplateType" abstract="true" />
+
+	<xsd:complexType name="ProceedingDataTemplateType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:RegistrationDate" />
+			<xsd:element ref="bbc:EffectiveDate" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

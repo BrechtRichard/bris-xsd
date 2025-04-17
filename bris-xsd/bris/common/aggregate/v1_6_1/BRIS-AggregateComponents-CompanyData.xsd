@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacco="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"/>
+
+	<xsd:element name="CompanyData" type="CompanyDataType"/>
+
+	<xsd:complexType name="SimplifiedCompanyDataType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:CompanyEUID"/>
+			<xsd:element ref="bacco:AlternateIdentifiers" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CompanyDataType">
+		<xsd:complexContent>
+			<xsd:extension base="SimplifiedCompanyDataType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:LegalFormCode" minOccurs="0"/>
+					<xsd:element name="Name" type="bbc:QualifiedCompanyNameType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

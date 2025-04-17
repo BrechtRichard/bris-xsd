@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+    xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	xmlns:bacc="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"/>
+
+	<xsd:complexType name="CrossBorderSimplifiedCompanyDataType">
+		<xsd:sequence>
+			<xsd:element name="Names" type="bacc:QualifiedCompanyNameListType"/>
+
+			<xsd:element ref="bacad:RegisteredOffice" />
+			<xsd:element ref="bbc:LegalFormCode" />
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

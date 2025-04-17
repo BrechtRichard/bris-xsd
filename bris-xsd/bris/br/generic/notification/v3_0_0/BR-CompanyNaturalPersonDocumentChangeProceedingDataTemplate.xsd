@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyNaturalPersonDocumentChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacpd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/PersonalData"
+	xmlns:bacre="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyNaturalPersonDocumentChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/PersonalData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"/>
+
+	<xsd:element name="CompanyNaturalPersonDocumentChangeProceedingDataTemplate" type="CompanyNaturalPersonDocumentChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyNaturalPersonDocumentChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="AdditionalData" minOccurs="0" maxOccurs="unbounded" type="NaturalPersonDataType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="NaturalPersonDataType">
+		<xsd:complexContent>
+			<xsd:extension base="bacpd:PersonalDataType">
+				<xsd:sequence>
+					<xsd:element name="Name" type="bbc:PersonNameType"/>
+					<xsd:element name="Surname" type="bbc:PersonSurnameType"/>
+					<xsd:choice>
+						<xsd:element name="BirthDate" type="bbc:BirthDateType"/>
+						<xsd:element name="NationalPersonalIdentificationNumber" type="bbc:NationalPersonalIdentificationNumberType"/>
+					</xsd:choice>
+					<xsd:element name="Representation" type="bacre:AttachedDocumentRepresentationType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

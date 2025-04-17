@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v6_0/br/RetrieveDocumentRequest"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacbrr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"
+	xmlns:bacusinf="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/UserInformation"
+	xmlns:bacbu="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Buyer"
+	targetNamespace="http://ec.europa.eu/bris/v6_0/br/RetrieveDocumentRequest"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="6.0.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/UserInformation"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Buyer"/>
+
+	<xsd:element name="BR-RetrieveDocumentRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="bacusinf:UserInformation" minOccurs="0"/>
+				<xsd:element ref="bacbu:Buyer" minOccurs="0"/>
+
+				<xsd:element ref="bacbrr:BusinessRegisterReference" />
+				<xsd:element ref="bbc:PaymentReference" />
+				<xsd:element ref="bbc:CompanyRegistrationNumber" />
+				<xsd:element ref="bbc:DocumentID" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v6_0/br/RetrieveDocumentResponse"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacbbr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"
+	xmlns:bacq="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Quote"
+	targetNamespace="http://ec.europa.eu/bris/v6_0/br/RetrieveDocumentResponse"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="6.0.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Quote"/>
+
+	<xsd:element name="BR-RetrieveDocumentResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="bacbbr:BusinessRegisterReference" />
+				<xsd:element ref="bbc:CompanyRegistrationNumber" />
+				<xsd:element ref="bbc:DocumentID" />
+				<xsd:element ref="bbc:AttachmentReference" />
+				<xsd:element name="Pricing" type="bacq:QuoteType"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

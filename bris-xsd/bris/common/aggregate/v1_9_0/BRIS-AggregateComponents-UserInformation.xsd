@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/UserInformation"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/UserInformation"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="UserInformation" type="UserInformationType"/>
+
+	<xsd:complexType name="UserInformationType">
+		<xsd:sequence>
+			<xsd:element name="LegalPerson" type="LegalPersonType" minOccurs="0"/>
+			<xsd:element name="NaturalPerson" type="NaturalPersonType" minOccurs="0"/>
+			<xsd:element name="Authentication" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Strength" type="bbc:StrengthType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="LegalPersonType">
+		<xsd:complexContent>
+			<xsd:extension base="CommonUserType">
+				<xsd:sequence>
+					<xsd:element name="LegalName" type="bbc:LegalNameType"/>
+					<xsd:element name="Identifier" type="bbc:LegalPersonIdentifierType"/>
+					<xsd:element name="VATRegistration" type="bbc:VATRegistrationType" minOccurs="0"/>
+					<xsd:element name="LegalEmailAddress" type="bbc:EmailType" minOccurs="0"/>
+					<xsd:element name="EJusticePortalRole" type="bbc:UserRoleType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="NaturalPersonType">
+		<xsd:complexContent>
+			<xsd:extension base="CommonUserType">
+				<xsd:sequence>
+					<xsd:element name="PersonIdentifier" type="bbc:NaturalPersonUniqueIdentifier"/>
+					<xsd:element name="FirstName" type="bbc:PersonNameType"/>
+					<xsd:element name="FamilyName" type="bbc:PersonSurnameType"/>
+					<xsd:element name="DateOfBirth" type="bbc:BirthDateType" minOccurs="0"/>
+					<xsd:element name="EmailAddress" type="bbc:EmailType" minOccurs="0"/>
+					<xsd:element name="EJusticePortalRole" type="bbc:UserRoleType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="CommonUserType" abstract="true">
+		<xsd:sequence>
+			<xsd:element name="Address" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Street" type="bbc:StreetType"/>
+						<xsd:element name="StreetNumber" type="bbc:StreetNumberType"/>
+						<xsd:element ref="bbc:PostalCode" />
+						<xsd:element ref="bbc:City"/>
+						<xsd:element ref="bbc:Country"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="IPAddress" type="bbc:IPAddressType"/>
+			<xsd:element name="Geolocation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Longitude" type="bbc:LongitudeType"/>
+						<xsd:element name="Latitude" type="bbc:LatitudeType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+        xmlns="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Buyer"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+        targetNamespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Buyer"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        version="0">
+
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+    <xsd:element name="Buyer" type="BuyerType"/>
+
+    <xsd:complexType name="BuyerType">
+        <xsd:sequence>
+            <xsd:element name="CountryCode" type="bbc:EndUserCountryType"/>
+            <xsd:element name="Type" type="bbc:CustomerType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

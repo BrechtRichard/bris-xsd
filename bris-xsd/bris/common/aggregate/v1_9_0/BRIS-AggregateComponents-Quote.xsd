@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+        xmlns="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Quote"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+        targetNamespace="http://ec.europa.eu/bris/v1_9/common/AggregateComponents/Quote"
+        elementFormDefault="qualified"
+        attributeFormDefault="unqualified"
+        version="0">
+
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+    <xsd:complexType name="QuoteType">
+        <xsd:sequence>
+            <xsd:element name="Price" type="bbc:DocumentFeeType"/>
+            <xsd:element name="VATAmount" type="bbc:DocumentFeeType"/>
+            <xsd:element name="PriceVATIncluded" type="bbc:DocumentFeeType"/>
+            <xsd:element name="VATRate" type="bbc:VATRateType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

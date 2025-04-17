@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/BranchData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/BranchData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+
+	<xsd:complexType name="SimplifiedBranchDataType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:EffectiveDate" minOccurs="0"/>
+			<xsd:element name="Names" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element ref="bbc:QualifiedBranchName" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element ref="bbc:BranchEUID"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ClosingBranchDataType">
+		<xsd:complexContent>
+			<xsd:extension base="SimplifiedBranchDataType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:StrikingOffDate"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="NewBranchDataType">
+		<xsd:complexContent>
+			<xsd:extension base="SimplifiedBranchDataType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:RegistrationDate"/>
+					<xsd:element ref="bacad:RegisteredOffice"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="UpdatedBranchDataType">
+		<xsd:complexContent>
+			<xsd:extension base="SimplifiedBranchDataType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:UpdateDate"/>
+					<xsd:element name="FormerBranchEUID" type="bbc:CompanyEUIDType" minOccurs="0"/>
+					<xsd:element ref="bacad:RegisteredOffice"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

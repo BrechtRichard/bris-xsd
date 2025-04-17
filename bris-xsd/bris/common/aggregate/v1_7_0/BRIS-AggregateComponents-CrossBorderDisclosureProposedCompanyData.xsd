@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+		xmlns:baccbacd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"
+		xmlns:bacd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+		targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="1">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+
+	<xsd:complexType name="CrossBorderDisclosureProposedCompanyDataType">
+		<xsd:complexContent>
+			<xsd:extension base="baccbscd:CrossBorderSimplifiedCompanyDataType">
+				<xsd:sequence>
+					<xsd:choice>
+						<xsd:element name="ArrangementsDocument" type="bacd:DocumentType"/>
+						<xsd:element name="AdditionalCompanyData" type="baccbacd:AdditionalCompanyDataType"/>
+					</xsd:choice>
+					<xsd:element ref="bbc:WebsiteDetails" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

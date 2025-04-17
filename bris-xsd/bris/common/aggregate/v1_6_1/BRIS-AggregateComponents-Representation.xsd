@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		xmlns:bacdo="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+		xmlns:baccd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"
+		targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"/>
+
+	<xsd:element name="Representation" type="RepresentationType"/>
+
+	<!-- Meant for AP as document will be loaded using RetrieveDocument -->
+	<xsd:complexType name="RepresentationType">
+		<xsd:choice minOccurs="0">
+			<xsd:element name="Description" type="bbc:RepresentationDescriptionType"/>
+			<xsd:element name="Document" type="bacdo:DocumentType"/>
+		</xsd:choice>
+		<xsd:attribute name="type" type="bbc:RepresentationType" use="required"/>
+	</xsd:complexType>
+
+	<!-- Meant for BR as document will be attached -->
+	<xsd:complexType name="AttachedDocumentRepresentationType">
+		<xsd:choice minOccurs="0">
+			<xsd:element name="Description" type="bbc:RepresentationDescriptionType"/>
+			<xsd:element name="Document" type="baccd:CompanyDocumentType"/>
+		</xsd:choice>
+		<xsd:attribute name="type" type="bbc:RepresentationType" use="required"/>
+	</xsd:complexType>
+</xsd:schema>

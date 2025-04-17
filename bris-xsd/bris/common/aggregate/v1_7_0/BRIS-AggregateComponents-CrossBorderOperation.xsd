@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderOperation"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+	xmlns:bacc="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	xmlns:baccbcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"
+	xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+	xmlns:baccbspcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData"
+	xmlns:baccbdpcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData"
+	xmlns:baccbpcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderOperation"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimpleCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company" />
+
+	<xsd:element name="Conversions" type="CrossBorderConversionListType"/>
+	<xsd:element name="Mergers" type="CrossBorderMergerListType"/>
+	<xsd:element name="Divisions" type="CrossBorderDivisionListType"/>
+
+	<xsd:complexType name="CrossBorderConversionListType">
+		<xsd:sequence>
+			<xsd:element name="Conversion" type="CrossBorderConversionType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrossBorderMergerListType">
+		<xsd:sequence>
+			<xsd:element name="Merger" type="CrossBorderMergerType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrossBorderDivisionListType">
+		<xsd:sequence>
+			<xsd:element name="Division" type="CrossBorderDivisionType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrossBorderConversionType">
+		<xsd:sequence>
+			<xsd:element name="Disclosure" type="ConversionDisclosureType" minOccurs="0"/>
+			<xsd:element name="PreOperationCertificate" type="PreOperationCertificateType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DepartureRegistration" type="DepartureRegistrationCompanyType"/>
+				<xsd:element name="DestinationRegistration" type="DestinationRegistrationType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrossBorderMergerType">
+		<xsd:sequence>
+			<xsd:element name="Disclosure" type="MergerDisclosureType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:element name="PreOperationCertificate" type="MergerPreOperationCertificateType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DepartureRegistration" type="MergerDepartureRegistrationType"/>
+				<xsd:element name="DestinationRegistration" type="MergerDestinationRegistrationType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CrossBorderDivisionType">
+		<xsd:sequence>
+			<xsd:element name="Disclosure" type="DivisionDisclosureType" minOccurs="0"/>
+			<xsd:element name="PreOperationCertificate" type="DivisionPreOperationCertificateType" minOccurs="0" maxOccurs="unbounded"/>
+			<xsd:choice minOccurs="0">
+				<xsd:element name="DepartureRegistration" type="DivisionDepartureRegistrationType"/>
+				<xsd:element name="DestinationRegistration" type="DivisionDestinationRegistrationType"/>
+			</xsd:choice>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="ConversionDisclosureType">
+		<xsd:sequence>
+			<xsd:element ref="baccbcd:CrossBorderCompanyData"/>
+			<xsd:element name="ProposedCompanyData" type="baccbdpcd:CrossBorderDisclosureProposedCompanyDataType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MergerDisclosureType">
+		<xsd:sequence>
+			<xsd:element ref="baccbcd:CrossBorderCompanyData"/>
+			<xsd:element name="ProposedCompanyData" type="baccbdpcd:CrossBorderDisclosureProposedCompanyDataType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DivisionDisclosureType">
+		<xsd:sequence>
+			<xsd:element ref="baccbcd:CrossBorderCompanyData"/>
+			<xsd:element name="ProposedCompanyData" type="baccbdpcd:CrossBorderDisclosureProposedCompanyDataType" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DivisionPreOperationCertificateType">
+		<xsd:sequence>
+			<xsd:element name="PreOperationData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProposedCompanyData" type="baccbscd:CrossBorderSimplifiedCompanyDataType" maxOccurs="unbounded"/>
+						<xsd:element name="Certificate" type="CertificateType"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PreOperationCertificateType">
+		<xsd:sequence>
+			<xsd:element name="PreOperationData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProposedCompanyData" type="baccbscd:CrossBorderSimplifiedCompanyDataType"/>
+						<xsd:element name="Certificate" type="CertificateType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MergerPreOperationCertificateType">
+		<xsd:sequence>
+			<xsd:element name="PreOperationData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ProposedCompanyData" type="baccbpcd:CrossBorderProposedCompanyDataType"/>
+						<xsd:element name="Certificate" type="CertificateType">
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CertificateType">
+		<xsd:sequence>
+			<xsd:element name="CertificateDocument" type="bacd:DocumentType"/>
+			<xsd:element name="CompetentAuthority" type="bbc:DescriptionType"/>
+			<xsd:element ref="bbc:IssuanceDate"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="RegistrationCompanyType">
+		<xsd:sequence>
+			<xsd:element name="Names" type="bacc:QualifiedCompanyNameListType"/>
+			<xsd:element ref="bbc:CompanyEUID"/> <!-- ConvertedCompanyEUID -->
+			<xsd:element ref="bbc:CompanyRegistrationNumber"/>
+			<xsd:element ref="bbc:LegalFormCode" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DepartureRegistrationCompanyType">
+		<xsd:complexContent>
+			<xsd:extension base="RegistrationCompanyType">
+				<xsd:sequence>
+					<xsd:element name="StrikingOffInformation" type="bbc:StrikingOffInformationType"/>
+					<xsd:element ref="bbc:StrikingOffDate" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="DivisionDepartureRegistrationType">
+		<xsd:sequence>
+			<xsd:element name="DividedCompany" type="DepartureRegistrationCompanyType"/>
+
+			<xsd:element name="ResultingCompanies">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ResultingCompany" type="RegistrationCompanyType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="MergerDepartureRegistrationType">
+		<xsd:sequence>
+			<xsd:element name="MergingCompanies">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MergingCompany" type="DepartureRegistrationCompanyType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="ResultingCompany" type="RegistrationCompanyType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DestinationRegistrationType">
+		<xsd:complexContent>
+			<xsd:extension base="RegistrationCompanyType">
+				<xsd:sequence>
+					<xsd:element name="RegistrationInformation" type="bbc:RegistrationInformationType"/>
+					<xsd:element ref="bbc:RegistrationDate"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="MergerDestinationRegistrationType">
+		<xsd:sequence>
+			<xsd:element name="ResultingCompany" type="DestinationRegistrationType"/>
+			<xsd:element name="MergingCompanies">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="MergingCompany" type="baccbspcd:CrossBorderSimpleCompanyDataType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DivisionDestinationRegistrationType">
+		<xsd:sequence>
+			<xsd:element name="ResultingCompanies">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ResultingCompany" type="DestinationRegistrationType" maxOccurs="unbounded"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="DividedCompany" type="baccbspcd:CrossBorderSimpleCompanyDataType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

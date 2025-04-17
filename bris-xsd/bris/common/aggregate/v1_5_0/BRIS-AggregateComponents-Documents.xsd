@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Document"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+        xmlns:bacci="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"
+		targetNamespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Document"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"/>
+
+    <xsd:element name="Documents">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Document" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="bacci:CompanyItem" />
+                            <xsd:element ref="bbc:DocumentID" />
+                            <xsd:element ref="bbc:DocumentFormat" />
+                            <xsd:element ref="bbc:DocumentLanguageCode" minOccurs="0"
+                                         maxOccurs="unbounded" />
+                            <xsd:element ref="bbc:DocumentFee" />
+                            <xsd:element ref="bbc:DocumentSize" minOccurs="0" />
+                            <xsd:element ref="bbc:DocumentPublicationDate" minOccurs="0" />
+                            <xsd:element ref="bbc:DocumentPurchasable" />
+                            <xsd:element ref="bbc:DocumentImmediateDelivery"
+                                         minOccurs="0" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

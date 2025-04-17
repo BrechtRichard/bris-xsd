@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v2_1/br/FullSubscriptionRequest"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v2_1/br/FullSubscriptionRequest"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="2.1.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="BR-FullSubscriptionRequest">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				DataExtractionDateTime: the dateTime when the subscription data
+				were extracted from the database
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="bbc:ManageSubscriptionProcessedDateTime"/>
+				<xsd:element name="Subscriptions">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Subscription" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element ref="bbc:CompanyEUID" />
+										<xsd:element ref="bbc:BranchEUID" minOccurs="0" />
+										<xsd:element ref="bbc:ManageSubscriptionID" />
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:unique name="UniqueSubscriptionID">
+			<xsd:selector xpath="Subscriptions/Subscription"/>
+			<xsd:field xpath="bbc:ManageSubscriptionID"/>
+		</xsd:unique>
+	</xsd:element>
+
+</xsd:schema>

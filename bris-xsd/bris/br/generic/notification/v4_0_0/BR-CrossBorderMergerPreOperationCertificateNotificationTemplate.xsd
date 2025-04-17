@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderMergerPreOperationCertificateNotificationTemplate"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+		xmlns:baccbcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData"
+		xmlns:baccbpod="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationData"
+		xmlns:baccbfnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"
+		targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderMergerPreOperationCertificateNotificationTemplate"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationData" />
+
+	<xsd:element name="CrossBorderMergerPreOperationCertificateNotificationTemplate" substitutionGroup="gn:NotificationTemplate">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="baccbfnt:CrossBorderForwardedNotificationTemplateType">
+					<xsd:sequence>
+						<xsd:element name="CrossBorderCompanyData" type="baccbcd:CrossBorderExtendedCompanyDataType"/>
+						<xsd:element name="PreOperationData" type="baccbpod:SimplePreOperationDataType"/>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

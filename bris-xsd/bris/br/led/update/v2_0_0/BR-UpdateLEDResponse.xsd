@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v2_0/br/UpdateLEDResponse"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacco="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Company"
+	targetNamespace="http://ec.europa.eu/bris/v2_0/br/UpdateLEDResponse"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="2.0.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Company"/>
+
+	<xsd:element name="BR-UpdateLEDStatus">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Status" maxOccurs="200">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element ref="bacco:Company" minOccurs="0" />
+							<xsd:element ref="bbc:UpdateLEDStatusCode" />
+							<xsd:element ref="bbc:UpdateLEDUpdateID" />
+							<xsd:element ref="bbc:UpdateLEDProcessedDateTime" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+		<xsd:unique name="UniqueUpdateLEDUpdateIDStatus">
+			<xsd:selector xpath="Status" />
+			<xsd:field xpath="bbc:UpdateLEDUpdateID" />
+		</xsd:unique>
+	</xsd:element>
+
+</xsd:schema>

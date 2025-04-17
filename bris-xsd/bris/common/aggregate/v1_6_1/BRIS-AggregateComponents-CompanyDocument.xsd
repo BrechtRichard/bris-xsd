@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/CompanyDocument"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+    <xsd:element name="CompanyDocument" type="CompanyDocumentType"/>
+
+    <xsd:complexType name="CompanyDocumentType">
+        <xsd:sequence>
+            <xsd:element ref="bbc:AttachmentReference"/>
+            <xsd:element name="Title" type="bbc:DocumentTitleType"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

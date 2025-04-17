@@ -1,0 +1,4625 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:udt="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"
+	xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"
+	xmlns:cvb="http://data.europa.eu/cv/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="2">
+
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2"/>
+	<xsd:import namespace="http://data.europa.eu/cv/BasicComponents"/>
+	<xsd:import namespace="urn:oasis:names:specification:ubl:schema:xsd:UnqualifiedDataTypes-2"/>
+
+	<xsd:element name="AckIndicator" type="AckIndicatorType" />
+	<xsd:element name="AddressLine1" type="AddressLine1Type" />
+	<xsd:element name="AddressLine2" type="AddressLine2Type" />
+	<xsd:element name="AddressLine3" type="AddressLine3Type" />
+	<xsd:element name="AttachmentReference" type="AttachmentReferenceType" />
+	<xsd:element name="BranchEUID" type="CompanyEUIDType" />
+	<xsd:element name="BusinessRegisterCountry" type="CountryType" />
+	<xsd:element name="BusinessRegisterID" type="BusinessRegisterIDType" />
+
+	<!-- Starting with v2.0 this is a replacement of the old BusinessRegisterID element -->
+	<xsd:element name="BusinessRegisterCode" type="BusinessRegisterCodeType" />
+
+	<xsd:element name="BusinessRegisterName" type="BusinessRegisterNameType" />
+	<xsd:element name="LocalisedBusinessRegisterName" type="LocalisedBusinessRegisterNameType" />
+	<xsd:element name="City" type="CityType" />
+	<xsd:element name="CompanyAlternateID" type="CompanyAlternateIDType" />
+
+    <!-- Starting with v2.0 this is a replacement of the old CompanyAlternateID element -->
+    <xsd:element name="AlternateID" type="AlternateIDType" />
+	<xsd:element name="CompanyEUID" type="CompanyEUIDType" />
+	<xsd:element name="CompanyItemExplanatoryLabel" type="CompanyItemExplanatoryLabelType" />
+	<xsd:element name="CompanyItemValidityStartDate" type="CompanyItemValidityStartDateType" />
+	<xsd:element name="CompanyItemValidityEndDate" type="CompanyItemValidityEndDateType" />
+	<xsd:element name="CompanyLegalForm" type="LegalFormCodeType" />
+
+	<xsd:element name="CompanyName" type="CompanyNameType" />
+	<xsd:element name="CompanyNameLanguageSpecific" type="CompanyNameLanguageSpecificType" />
+
+    <!-- Starting with v2.0 this is a replacement of the old CompanyNameLanguageSpecific element -->
+    <xsd:element name="LocalisedCompanyName" type="LocalisedCompanyNameType"/>
+
+    <xsd:element name="QualifiedCompanyName" type="QualifiedCompanyNameType" />
+	<xsd:element name="CompanyRegistrationNumber" type="CompanyRegistrationNumberType" />
+	<xsd:element name="CorrelationID" type="CorrelationIDType" />
+	<xsd:element name="Country" type="CountryType" />
+	<xsd:element name="DataExtractionDateTime" type="DateTimeType" />
+	<xsd:element name="DataExportFileURI" type="DataExportFileURIType" />
+	<!-- NOT USED <xsd:element name="Date" type="DateType" /> -->
+	<!-- NOT USED <xsd:element name="DateTime" type="DateTimeType" /> -->
+	<xsd:element name="DocumentFee" type="DocumentFeeType" />
+	<xsd:element name="DocumentFormat" type="DocumentFormatType" />
+	<xsd:element name="DocumentID" type="DocumentIDType" />
+	<xsd:element name="DocumentImmediateDelivery" type="DocumentImmediateDeliveryType" />
+	<xsd:element name="DocumentLanguageCode" type="LanguageCodeType" />
+	<xsd:element name="DocumentPublicationDate" type="DocumentPublicationDateType" />
+	<xsd:element name="DocumentPurchasable" type="DocumentPurchasableType" default="true" />
+	<xsd:element name="DocumentSize" type="DocumentSizeType" />
+	<xsd:element name="EffectiveDate" type="EffectiveDateType" />
+	<xsd:element name="EndUserCountry" type="EndUserCountryType" />
+	<xsd:element name="ExpiryDateTime" type="DateTimeType" />
+	<xsd:element name="IssuanceDateTime" type="DateTimeType" />
+	<xsd:element name="FaultErrorCode" type="FaultErrorCodeType" />
+	<xsd:element name="FaultErrorDescription" type="FaultErrorDescriptionType" />
+	<xsd:element name="FaultErrorSource" type="FaultErrorSourceType" />
+	<!-- NOT USED <xsd:element name="LanguageCode" type="LanguageCodeType" /> -->
+
+    <!-- Starting with v2.0 this is a replacement of the old CompanyLegalForm element -->
+    <xsd:element name="LegalFormCode" type="LegalFormCodeType" />
+
+    <xsd:element name="LegalFormTitle" type="LegalFormTitleType" />
+    <xsd:element name="LegalFormDescription" type="LegalFormDescriptionType" />
+    <xsd:element name="LegalFormAbbreviation" type="LegalFormAbbreviationType" />
+    <xsd:element name="LegalFormRemarks" type="LegalFormRemarksType" />
+	<xsd:element name="LegislationReference" type="LegislationReferenceType" />
+	<xsd:element name="ManageSubscriptionCode" type="ManageSubscriptionCodeType" />
+	<xsd:element name="ManageSubscriptionSendingDateTime" type="DateTimeType" />
+	<xsd:element name="ManageSubscriptionProcessedDateTime"		type="DateTimeType" />
+	<xsd:element name="ManageSubscriptionStatusCode" type="ManageSubscriptionStatusCodeType" />
+	<xsd:element name="ManageSubscriptionID" type="ManageSubscriptionIDType" />
+	<xsd:element name="Merger" type="MergerType" />
+	<xsd:element name="MessageID" type="MessageIDType" />
+    <xsd:element name="NotificationDateTime" type="DateTimeType" />
+	<xsd:element name="NumberOfResultsInMessage" type="NumberOfResultsInMessageType" />
+	<xsd:element name="NumberOfResultsInRegisters" type="NumberOfResultsInRegistersType" />
+    <xsd:element name="ParticularAmountValue" type="ParticularAmountValueType" />
+    <xsd:element name="ParticularBooleanValue" type="ParticularBooleanValueType" />
+    <xsd:element name="ParticularDateValue" type="ParticularDateValueType" />
+    <xsd:element name="ParticularDecimalValue" type="ParticularDecimalValueType" />
+    <xsd:element name="ParticularIntegerValue" type="ParticularIntegerValueType" />
+    <xsd:element name="ParticularStringValue" type="ParticularStringValueType" />
+	<xsd:element name="PaymentReference" type="PaymentReferenceType" />
+	<xsd:element name="PostalCode" type="PostalCodeType" />
+	<xsd:element name="Proceeding" type="ProceedingType" />
+	<xsd:element name="ProcessingNodeName" type="ProcessingNodeNameIDType" />
+	<xsd:element name="ProcessingTime" type="ProcessingTimeType" />
+	<xsd:element name="ReceivingDateTime" type="DateTimeType" />
+	<xsd:element name="Relevance" type="RelevanceType" />
+	<xsd:element name="SendingDateTime" type="DateTimeType" />
+	<xsd:element name="SubscriptionStatusCode" type="SubscriptionStatusCodeType" />
+	<xsd:element name="SubscriptionStatusValue" type="SubscriptionStatusValueType" />
+	<xsd:element name="TestCaseID" type="TestCaseIDType" />
+	<xsd:element name="TestConditionID" type="TestConditionIDType" />
+	<xsd:element name="TestExecutionID" type="TestExecutionIDType" />
+	<xsd:element name="TestPackageID" type="TestPackageIDType" />
+	<xsd:element name="TestSessionID" type="TestSessionIDType" />
+	<!-- NOT USED <xsd:element name="Time" type="TimeType" /> -->
+	<!-- NOT USED <xsd:element name="TimeAmount" type="TimeAmountType" /> -->
+	<xsd:element name="UpdateLEDCode" type="UpdateLEDCodeType" />
+	<xsd:element name="UpdateLEDUpdateID" type="UpdateLEDUpdateIDType" />
+	<xsd:element name="UpdateLEDStatusCode" type="UpdateLEDStatusCodeType" />
+	<xsd:element name="UpdateLEDProcessedDateTime" type="DateTimeType" />
+	<xsd:element name="UpdateLEDDateTime" type="DateTimeType" />
+	<xsd:element name="URI" type="URIType" />
+	<xsd:element name="Warning" type="WarningType" />
+
+	<!-- Added with 3.0 messaging model -->
+	<xsd:element name="RegistrationDate" type="RegistrationDateType"/>
+	<xsd:element name="QualifiedBranchName" type="QualifiedCompanyNameType" />
+	<xsd:element name="StrikingOffDate" type="StrikingOffDateType" />
+	<xsd:element name="UpdateDate" type="UpdateDateType"/>
+
+	<!-- Added with 4.0 messaging model -->
+	<xsd:element name="RegisterDescription" type="RegisterDescriptionType"/>
+	<xsd:element name="IssuanceDate" type="DateType" />
+	<xsd:element name="HasCrossBorderDetails" type="HasCrossBorderDetailsType" />
+	<xsd:element name="WebsiteDetails" type="WebsiteDetailsType" />
+
+    <xsd:simpleType name="ModelVersionType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="1.4.0"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+	<xsd:complexType name="SizeLimitedDocumentIDType">
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:DocumentIDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+    <xsd:complexType name="AckIndicatorType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Indicator for technical ack
+				DataType: IndicatorType
+				Examples: 1 (accepted)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:AcceptedIndicatorType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressLine1Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registered address of the company
+				DataType: TextType
+				Content: String
+				Examples: 12, Bvd. de Pigalle, 75001 Paris, France
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:LineType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressLine2Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registered address of the company
+				DataType: TextType
+				Content: String
+				Examples: 12, Bvd. de Pigalle, 75001 Paris, France
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:LineType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AddressLine3Type">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registered address of the company
+				DataType: TextType
+				Content: String
+				Examples: 12, Bvd. de Pigalle, 75001 Paris, France
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:LineType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="AttachmentReferenceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Indicator for technical ack
+				DataType: IndicatorType
+				Examples: 1 (accepted)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ReferenceIDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="BusinessRegisterIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Element making it possible to identify the domestic
+				register of
+				origin of a company
+				DataType: IdentifierType
+				Content:
+				String
+				Examples: RMC
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:RegistrationIDType">
+				<xsd:minLength value="2" />
+				<xsd:maxLength value="15" />
+				<xsd:pattern value="[\S]*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<!-- Starting with v2.0 this is a replacement of the old BusinessRegisterIDType element -->
+	<xsd:complexType name="BusinessRegisterCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Element making it possible to label the domestic
+				register of	origin of a company (unicity is not guaranteed)
+				DataType: CodeType
+				Content:
+				String
+				Examples: RMC
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IdentificationCodeType">
+				<xsd:minLength value="2" />
+				<xsd:maxLength value="15" />
+				<xsd:pattern value="[\S]*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="BusinessRegisterNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the business register where a company is
+				registered
+				DataType: NameType
+				Content: String
+				Examples: Registro Mercantil Central
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:NameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="128" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LocalisedBusinessRegisterNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the business register in original language
+				DataType: NameType
+				Content: String
+				Examples: Companies House
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+            <!-- The extension is needed to create a new type name that will insist on the "localisation",
+                 i.e. the languageID attribute of the base type will actually be used -->
+			<xsd:extension base="BusinessRegisterNameType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+    <xsd:complexType name="EnglishBusinessRegisterNameType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Name of the business register where a company is
+                registered
+                DataType: NameType
+                Content: String
+                Examples: Registro Mercantil Central
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cbc:NameType">
+                <xsd:minLength value="1" />
+                <xsd:maxLength value="128" />
+                <xsd:pattern value=".*[\S].*" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+	<xsd:complexType name="CityType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the city of the registered office
+				DataType:
+				TextType
+				Content: String
+				Examples: Paris
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:CityNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="255" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+    <xsd:complexType name="AlternateIDType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Alternate identifier for a company. Typically, alternate
+                IDs are
+                used by some Member States participating in pilots.
+                DataType: IdentifierType
+                Content: String
+                Examples: XXXX111
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cbc:CompanyIDType">
+                <xsd:minLength value="1" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+	<xsd:complexType name="CompanyAlternateIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Alternate identifier for a company. Typically, alternate
+				IDs are
+				used by some Member States participating in pilots.
+				Data.Type: IdentifierType
+				Content: String
+				Examples: XXXX111
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:CompanyIDType">
+				<xsd:minLength value="1" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyEUIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: The European Unique Identifier is a unique identifier of a company
+				for the purpose of communication between registers in the context of BRIS.
+				DataType: IdentifierType
+				Content: String
+				Examples:
+				FRIG.2010012341-Z
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:CompanyIDType">
+                <!--
+                    NOTE: this pattern cannot enforce the length range of the registration number part of the EUID
+                          This cannot be implemented in a readable way in XML Schema 1.0.
+                          This validation would need to be delegated to business validation
+                -->
+				<xsd:pattern value="[A-Z]{2}[\S]{2,15}\.[\S]{3,35}" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyItemValidityStartDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Applicability start date of an item
+				DataType: DateType
+				Content: Date
+				Examples:2016-01-10
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyItemValidityEndDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Applicability end date of an item
+				DataType: DateType
+				Content: Date
+				Examples:2016-01-10
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyLegalFormType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Legal form of the company
+				DataType: CodeType
+				Content:
+				String
+				Examples: Societe par action simplifiee , S.A.S
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LegalEntityCompanyTypeCodeType">
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the company
+				DataType: NameType
+				Content: String
+				Examples: GDF Suez
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:InputNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="1000" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyNameLanguageSpecificType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the company
+				DataType: NameType
+				Content: String
+				Examples: GDF Suez
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LegalEntityLegalNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="1000" />
+				<xsd:pattern value=".*[\S].*" />
+				<xsd:attribute name="languageID" type="LanguageCodeType"
+					use="required" />					
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+    <xsd:complexType name="LocalisedCompanyNameType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Name of the company
+                DataType: NameType
+                Content: String
+                Examples: GDF Suez
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cvb:LegalEntityLegalNameType">
+                <xsd:minLength value="1" />
+                <xsd:maxLength value="1000" />
+                <xsd:pattern value=".*[\S].*" />
+                <xsd:attribute name="languageID" type="LanguageCodeType"
+                               use="required" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+
+    <xsd:complexType name="QualifiedCompanyNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of the company
+				DataType: NameType
+				Content: String
+				Examples: GDF Suez
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="LocalisedCompanyNameType">
+				<xsd:attribute name="qualifierValue" type="CompanyNameQualifierValueType" default="main"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+    <xsd:complexType name="QualifiedEntityNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: A qualified entity name (with a qualifier and localization)
+				DataType: NameType
+				Content: String
+				Examples: Whatever Trust
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="LocalisedCompanyNameType">
+				<xsd:attribute name="qualifierValue" type="CompanyNameQualifierValueType" default="main"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="CompanyNameQualifierValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value identifying a type of company name
+				DataType: CodeType
+				Content:
+				String
+				Examples: Main
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="main"/>
+			<xsd:enumeration value="secondary"/>
+			<xsd:enumeration value="parallel"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="CompanyRegistrationNumberType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Company number refers to the registration number of the
+				company in
+				the domestic register of origin
+				DataType: IdentifierType
+				Content: String
+				Examples:ATU99999999
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LegalEntityLegalIDType">
+				<xsd:minLength value="3" />
+				<xsd:maxLength value="35" />
+				<xsd:pattern value="[\S]+" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CorrelationIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Reference of the message
+				DataType: IDType
+				Content:
+				String
+				Examples: normalizedString
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ReferenceIDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="CountryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Country code for companies or business registers.
+				According to the
+				EU Publication Office [5], country code list uses
+				ISO3166-1 alfa-2.
+				DataType: CodeType
+				Content: String
+				Examples: BE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IdentificationCodeType">
+				<xsd:enumeration value="AT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Austria
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="BE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Belgium
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="BG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bulgaria
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="CY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cyprus
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="CZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Czech Republic
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="DE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Germany
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="DK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Denmark
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="EE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Estonia
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="EL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Greece
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="ES">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Spain
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="FI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Finland
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="FR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">France
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="HR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Croatia
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="HU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Hungary
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="IE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ireland
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="IS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Iceland
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="IT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Italy
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="LI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Liechtenstein
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="LT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Lithuania
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="LU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Luxembourg
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="LV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Latvia
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="MT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Malta
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="NL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Netherlands
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="NO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Norway
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="PL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Poland
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="PT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Portugal
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="RO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Romania
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="SE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sweden
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="SI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Slovenia
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="SK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Slovakia
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="UK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">United Kingdom
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DataExportFileURIType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Indicator for the data export file sent
+				over FTP from the business register within the context of
+				full update request.
+				DataType: URIType
+				Examples:
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:URIType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="128" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Date when the message was sent.
+				DataType:DateType
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DateTimeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Date when the message was sent.
+				DataType:DateType
+				Examples: 1111-11-11T11:11:11.111Z or 1111-11-11T11:11:11.111+02:00
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:DateTimeType">
+				<xsd:pattern value=".+\.\d{3}(Z|([+-].+))"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentFeeType">
+		<xsd:simpleContent>
+			<xsd:extension base="FeeType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FeeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the fee and currency of the fee
+				DataType:
+				AmountType
+				Content: decimal
+				Examples: 45.00
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:AmountType">
+				<xsd:attribute name="currencyID" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:normalizedString">
+							<xsd:enumeration value="EUR">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Euro
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="BGN">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Bulgarian Lev
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="CHF">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Swiss Franc
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="CZK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Czech Republic
+										Koruna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="DKK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Danish Krone
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="GBP">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">British Pound
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="HRK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Croatian Kuna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="HUF">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Hungarian Forint
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="ISK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Icelandic Króna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="NOK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Norwegian Krone
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="PLN">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Polish Zloty
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="RON">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Romanian Leu
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="SEK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Swedish Krona
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentFormatType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Format code of a document.
+				DataType: CodeType
+				Content:
+				String
+				Examples:TAR
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:DocumentTypeCodeType">
+				<xsd:minLength value="1"/>
+				<xsd:maxLength value="5"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Internal document identifier
+				DataType: IdentifierType
+				Content: String
+				Examples: 1420
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentImmediateDeliveryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Indicator used to specify if a binary document is
+				directly
+				available (1) or not (0).
+				DataType: IndicatorType
+				Content:
+				boolean
+				Examples: 1
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:StatusAvailableIndicatorType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentPublicationDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Date of publication of the document
+				DataType: DateType
+				Content: Date
+				Examples:2016-01-10
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentPurchasableType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Indicator that specifies if a document is public and
+				therefore
+				purchasable (1) or not (0).
+				DataType: IndicatorType
+				Content: boolean
+				Examples: 1
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:OrderableIndicatorType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="DocumentSizeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: File size (in MB)
+				DataType: MeasureType
+				Content: decimal
+				Examples: 10.00
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ValueMeasureType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EffectiveDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Date when the update became/becomes effective
+				DataType:
+				DateType
+				Content: String
+				Examples: 2016-01-10
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:EffectiveDateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="EndUserCountryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Country code for companies or business registers.
+				According to the
+				EU Publication Office [5], country code list uses
+				ISO3166-1 alfa-2.
+				DataType: CodeType
+				Content: String
+				Examples: BE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+            <xsd:restriction base="cbc:IdentificationCodeType">
+                <xsd:pattern value="[a-zA-Z]{2}"/>
+            </xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExpiryDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Expiration date of a resource.
+				DataType: DateType
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ExpiryDateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CompanyItemExplanatoryLabelType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code identifying an item. These codes are
+				country-specific.
+				DataType: CodeType
+				Content: String
+				Examples:AS01
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ItemClassificationCodeType">
+				<xsd:minLength value="1" />
+				<xsd:pattern value="[\S]*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExplanatoryLabelCountryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Country of origin of the explanatory label code list
+				DataType: CodeType
+				Content: String
+				Examples: BE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IdentificationCodeType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExplanatoryLabelDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of an item
+				DataType: TextType
+				Content:
+				String
+				Examples: Accounting details of a company
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:DescriptionType">
+				<xsd:minLength value="1" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExplanatoryLabelLanguageType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Language of the label
+				DataType: CodeType
+				Content: String
+				Examples: bg
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:EncodingCodeType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ExplanatoryLabelTitleType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of an item
+				DataType: TextType
+				Content:
+				String
+				Examples: Accounting sheet
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:TitleType">
+				<xsd:minLength value="1" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ManageSubscriptionCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code describing the operation to be performed for a
+				specific
+				subscription in the ECP.
+				DataType: CodeType
+				Content: String
+				Examples: Add
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:AdjustmentReasonCodeType">
+				<xsd:enumeration value="ADD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Add a company to the
+							subscription list of the issuing business register
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="REMOVE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Remove a company
+							from the subscription list of the issuing business register
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ManageSubscriptionStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code describing the operation to be performed for a
+				specific
+				subscription in the ECP.
+				DataType: CodeType
+				Content: String
+				Examples: Add
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="PROCESSED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The update in the
+							subscription list has been successfully performed
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="IGNORED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The update has not
+							been perform because the request was out-dated
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ManageSubscriptionIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: ID a specific subscription in the ECP.
+				DataType:
+				IdentifierType
+				Content: String
+				Examples: 002
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="16" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularAmountValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is an amount
+				DataType: AmountType
+				Content: Decimal
+				Examples: 11,20 EUR
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:AmountType">
+				<xsd:attribute name="currencyID" use="required">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:normalizedString">
+							<xsd:enumeration value="EUR">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Euro
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="BGN">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Bulgarian Lev
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="CHF">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Swiss Franc
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="CZK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Czech Republic
+										Koruna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="DKK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Danish Krone
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="GBP">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">British Pound
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="HRK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Croatian Kuna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="HUF">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Hungarian Forint
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="ISK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Icelandic Króna
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="NOK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Norwegian Krone
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="PLN">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Polish Zloty
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="RON">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Romanian Leu
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+							<xsd:enumeration value="SEK">
+								<xsd:annotation>
+									<xsd:documentation xml:lang="EN">Swedish Krona
+									</xsd:documentation>
+								</xsd:annotation>
+							</xsd:enumeration>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:attribute>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularBooleanValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is a boolean
+				DataType: IndicatorType
+				Content: Boolean
+				Examples: 1
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ConsolidatableIndicatorType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularDateValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is a date
+				Data.
+				Type: DateType
+				Content: Date
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularDecimalValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is a decimal
+				DataType: QuantityType
+				Content: decimal
+				Examples: 10,00
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:QuantityType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularIntegerValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is an integer
+				DataType: QuantityType
+				Content: int
+				Examples: 23
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:QuantityType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ParticularStringValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value of the item if the required format is a string
+				DataType: TextType
+				Content: string
+				Examples: Retail
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:TextType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="2048" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FaultErrorCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code identifying an error
+				DataType: CodeType
+				Content: String
+				Examples: PORT0001E
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ResponseCodeType">
+				<xsd:pattern value="[\S]*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FaultErrorDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of an error.
+				DataType: TextType
+				Content: String
+				Examples: Portal got a reply with no result.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:DescriptionType">
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="FaultErrorSourceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: System in error.
+				DataType: IdentifierType
+				Content: String
+				Examples: BR-BE-01
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ReferenceIDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+    <xsd:complexType name="LegalFormAbbreviationType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Abbreviation used to referer to a given legal form
+                DataType: TextType
+                Content: String
+                Example: Ltd
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cbc:NameCodeType">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="130"/>
+                <xsd:pattern value=".*[\S].*" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+	<xsd:complexType name="LegalFormCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code identifying a legal form of a company as defined by
+				Article 1 of Directive 2009/101/EC
+				DataType: CodeType
+				Content: String
+				Examples: LF_UK_004
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:LegalEntityCompanyTypeCodeType">
+				<xsd:minLength value="9" />
+				<xsd:pattern value="[\S]*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LegalFormCodeCountryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Country of origin of the legal form code list
+				DataType: CodeType
+				Content: String
+				Examples: UK
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IdentificationCodeType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+    <!-- NOT USED
+    <xsd:complexType name="LegalFormCodeValueType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Code of the legal form
+                DataType: NameType
+                Content: String
+                Examples: LF_UK_004
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:complexContent>
+            <xsd:extension base="cvb:LegalEntityLegalNameType" />
+        </xsd:complexContent>
+    </xsd:complexType>
+    -->
+	<xsd:complexType name="LegalFormDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of a legal form
+				DataType: TextType
+				Content:
+				String
+				Example: A private company with liability limited by the amount of unpaid
+                capital on shares. Unable to make shares availble on the stock exchange.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:DescriptionType">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="1024"/>
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="LegalFormLanguageType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Language of the legal form description
+				DataType:
+				CodeType
+				Content: String
+				Examples: bg
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:EncodingCodeType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+    <xsd:complexType name="LegalFormRemarksType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Remarks associated with a legal form
+                DataType: TextType
+                Content:
+                String
+                Example: Includes Welsh equivalent Cyfyngedig - cyf
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cbc:RemarksType">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="1024"/>
+                <xsd:pattern value=".*[\S].*" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LegalFormTitleType">
+        <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+                ComponentType: Basic
+                Definition: Title of a legal form
+                DataType: TextType
+                Content:
+                String
+                Example: Private Limited
+            </xsd:documentation>
+        </xsd:annotation>
+        <xsd:simpleContent>
+            <xsd:restriction base="cbc:TitleType">
+                <xsd:minLength value="1"/>
+                <xsd:maxLength value="1024"/>
+                <xsd:pattern value=".*[\S].*" />
+            </xsd:restriction>
+        </xsd:simpleContent>
+    </xsd:complexType>
+    <xsd:complexType name="LegislationReferenceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Relevant national or EU legislation.
+				DataType: TextType
+				Content: String
+				Examples: Article 13 of Directive 2005/56/EC, as
+				amended by Directive
+				2012/17/EU (Art. 2)
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:LegalReferenceType" />
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MergerType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code of a merger as defined by Article 2(2) of Directive
+				2005/56/EC
+				[5].
+				DataType: CodeType
+				Content: String
+				Examples:
+				Acquisition
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:NotificationTypeCodeType">
+				<xsd:enumeration value="ACQUISITION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cross-border merger
+							by acquisition
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="FORMATION_OF_NEW_COMPANY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cross-border merger
+							by formation of new company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="OWNED_COMPANY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cross-border merger
+							of wholly owned company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="MessageIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Reference of the message
+				DataType: IDType
+				Content:
+				String
+				Examples: normalizedString
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ReferenceIDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="NumberOfResultsInMessageType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Number of results in message.
+				DataType: QuantityType
+				Content: int
+				Examples: 4
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DeliveredQuantityType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="NumberOfResultsInRegistersType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Total number of results found in register(s).
+				DataType:
+				QuantityType
+				Content: int
+				Examples: 5
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DeliveredQuantityType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="PaymentReferenceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Reference of the payment for one or several documents
+				belonging to
+				a specific Business Register.
+				DataType: TextType
+				Content: String
+				Examples: 31234567
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ReferenceType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="PostalCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Postal code
+				DataType: TextType
+				Content: String
+				Examples:
+				4000
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:PostalZoneType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="10" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProceedingType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code of a branch disclosure event as given in Article 5a
+				(1) of
+				Directive 89/666/EEC [6].
+				DataType: CodeType
+				Content: String
+				Examples: WindingUpOpening
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:NotificationTypeCodeType">
+				<xsd:enumeration value="WINDING_UP_OPENING">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Winding-up Opening
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="WINDING_UP_TERMINATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Winding-up
+							Termination
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="WINDING_UP_OPENING_AND_TERMINATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Winding-up Opening
+							and Termination
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="WINDING_UP_REVOCATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Winding-up
+							Revocation
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="INSOLVENCY_OPENING">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Insolvency Opening
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="INSOLVENCY_TERMINATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Insolvency
+							Termination
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="INSOLVENCY_OPENING_AND_TERMINATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Insolvency Opening
+							and Termination
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="INSOLVENCY_REVOCATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Insolvency
+							Revocation
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="STRIKING_OFF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Striking-off
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="NO_STRIKING_OFF_OF_BRANCH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Article 5a(5) – No-Striking-off-of Branch
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<!--
+	<xsd:complexType name="CompanyUpdateProceedingType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code of a company update event as given in Article 30 (a) of Directive 2019/1151/EEC [6].
+				DataType: CodeType
+				Content: String
+				Examples:
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:NotificationTypeCodeType">
+				<xsd:enumeration value="COMPANY_NAME_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_REGISTERED_OFFICE_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company registered office</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_REGISTRATION_NUMBER_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company registration number</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_LEGAL_FORM_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company legal form</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_DOCUMENT_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company document</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_FINANCIAL_DOCUMENT_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company financial document (according to article 14d) </xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="COMPANY_OTHER_DOCUMENT_CHANGE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Change of a company other document (according to article 14f)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	-->
+
+	<xsd:complexType name="NationalPersonalIdentificationNumberType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: National Personal Identification Number
+				DataType: TextType
+				Content: String
+				Examples: 001/021545125/555-R
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:PersonIDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="IdentificationDocumentNumberType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Identification Document Number
+				DataType: TextType
+				Content: String
+				Examples: 001/021545125/555-R
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="SizeLimitedDocumentIDType">
+				<xsd:attribute name="belongsTo" type="IdentificationDocumentType" use="required"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="NationalityType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Nationality
+				DataType: TextType
+				Content: String
+				Examples: French
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:NationalityIDType"> <!-- TODO verify the definition makes sense -->
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="BirthPlaceNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Nationality
+				DataType: TextType
+				Content: String
+				Examples: French
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:BirthplaceNameType"> <!-- TODO verify the definition makes sense -->
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="64" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="FinancialPeriodType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Financial period like YEAR or MONTH OF YEAR
+				DataType: TextType
+				Content: String
+				Examples: YEAR
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="64" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+
+	<xsd:simpleType name="IdentificationDocumentType">
+		<!-- TODO define the type with an enumeration or use a string and business rule -->
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Type of an identification document
+				DataType: TextType
+				Content: String
+				Examples: Passport
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="64" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="RelevanceType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value indicating how much a result matches the search
+				criteria.
+				DataType: NumericType
+				Content: int
+				Examples: 2
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:WeightNumericType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProcessingNodeNameIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Specifies the name of the node where the
+				BR-PingRequest has been processed.
+				Data.
+				Type: IdentifierType
+				Content: String
+				Examples: XXXX111
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IDType">
+				<xsd:minLength value="1" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="ProcessingTimeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Specifies a time duration in milliseconds
+				Examples: 600001
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:TimeAmountType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubscriptionStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code describing the status for a specific subscription
+				in the ECP.
+				DataType: CodeType
+				Content: String
+				Examples: Subscribed
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="SUBSCRIBED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The business
+							register is in the subscription list for a specific parent
+							company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="NOT_SUBSCRIBED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The business
+							register is not in the subscription list for a specific parent
+							company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="SubscriptionStatusValueType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing the status for a specific subscription
+				in the ECP.
+				DataType: CodeType
+				Content: String
+				Examples: Subscribed
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="SUBSCRIBED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The business
+							register is in the subscription list for a specific parent
+							company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="NOT_SUBSCRIBED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The business
+							register is not in the subscription list for a specific parent
+							company
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="SUBSCRIBED_PARENT_EUID_NOT_FOUND_IN_THE_LED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">
+							The business register is in the subscription list for a specific parent
+							company BUT the parent EUID was not found in the list of known EUIDs
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="TestCaseIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Test Case identifier
+				DataType:IdentifierType
+				Examples: TC-FN-009-08
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TestConditionIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Test execution condition identifier
+				Data.
+				Type:IdentifierType
+				Examples:1
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TestExecutionIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Test Execution identifier.
+				Represents that actual sending of a single message
+				in the context of a test
+				session
+				DataType:IdentifierType
+				Examples:
+				123456
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ReferenceIDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TestPackageIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Test package identifier
+				DataType:IdentifierType
+				Examples:TPK-FN-BDN
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TestSessionIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Test Session identifier.
+				unique identifier that correlates a specific test case
+				with a group of test cases.
+				DataType:IdentifierType
+				Examples:
+				123456
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:ReferenceIDType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TimeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Time when the message was sent.To specify a time zone,
+				enter a time
+				in UTC time by adding a "Z" behind the time
+				DataType:
+				TimeType
+				Examples: 12:00:00Z
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:EffectiveTimeType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="TimeAmountType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Specifies a time duration in milliseconds
+				Examples: 600001
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:TimeAmountType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateLEDCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code used to define the type of update to be performed
+				in the LED.
+				DataType: CodeType
+				Content: String
+				Examples: Update
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:AdjustmentReasonCodeType">
+				<xsd:enumeration value="UPDATE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Update of company
+							data
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="DELETE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Delete of company
+							data
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateLEDUpdateIDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: ID a specific subscription in the ECP.
+				DataType: IdentifierType
+				Content: String
+				Examples: 002
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IDType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="16" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="UpdateLEDStatusCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Status of a LED request to indicate if it has been
+				processed or
+				not.
+				DataType: TextType
+				Content: String
+				Examples: Update
+				done on Company Name: IKEA
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="PROCESSED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The update has been
+							processed
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="IGNORED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The update has not
+							been processed.
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="URIType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Unique Resource Identifier of the external reference of
+				the document
+				DataType: IdentifierType
+				Content: string
+				Examples:
+				https://www.iso.org/
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:URIType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="2048" />
+				<xsd:pattern value="https?://.+" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:complexType name="WarningType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of an exception returned by SOLR if there is
+				an error
+				in processing a request for a simple search.
+				DataType: CodeType
+				Content: string
+				Examples: WARN_ES_01
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:ResponseCodeType">
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+	<xsd:simpleType name="LanguageCodeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Code identifying a language
+				DataType: CodeType
+				Content:
+				String
+				Examples:SA2
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:language">
+			<xsd:enumeration value="bg">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Bulgarian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="cs">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Czech
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="da">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Danish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="de">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">German
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="el">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Greek
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="en">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">English
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="es">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Spanish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="et">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Estonian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="fi">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Finnish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="fr">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">French
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ga">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Irish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="hr">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Croatian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="hu">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Hungarian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="is">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Icelandic
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="it">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Italian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="lt">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Lithuanian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="lv">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Latvian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="mt">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Maltese
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="nl">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Dutch
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="no">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Norsk
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="pl">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Polish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="pt">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Portugese
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ro">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Romanian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="sk">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Slovak
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="sl">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Slovenian
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="sv">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Swedish
+					</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- Added with 3.0 messaging model -->
+	<xsd:complexType name="RegistrationDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registration date (of a company or a branch)
+				Data.
+				Type: DateType
+				Content: Date
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="StrikingOffDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Date of striking off (of a company or a branch)
+				Data.
+				Type: DateType
+				Content: Date
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="UpdateDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Update date (related to some update of some data - generic approach)
+				Data.
+				Type: DateType
+				Content: Date
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="BirthDateType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Birth date (of a natural person)
+				Data.
+				Type: DateType
+				Content: Date
+				Examples: 2017-12-12
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:DateType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="DocumentTitleType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Title of a document
+				DataType: NameType
+				Content: String
+				Examples: User's manual
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:InputNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="1000" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PersonSurnameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Surname of a person
+				DataType: NameType
+				Content: String
+				Examples: John
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:InputNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="1000" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PersonNameType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Name of a person
+				DataType: NameType
+				Content: String
+				Examples: Doe
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cvb:InputNameType">
+				<xsd:minLength value="1" />
+				<xsd:maxLength value="1000" />
+				<xsd:pattern value=".*[\S].*" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PredefinedStatusType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing a predefined status for a company.
+				DataType: CodeType
+				Content: String
+				Examples: CLOSED
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="CLOSED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The company is closed
+						</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="STRUCK_OFF_THE_REGISTER">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The company has been struck off the register</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="WOUND_UP">
+					<xsd:annotation>
+						<!-- FIXME -->
+						<xsd:documentation xml:lang="en">TO BE DEFINED</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="DISSOLVED">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The company has been dissolved</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="ECONOMICALLY_ACTIVE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The company is economically active</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="ECONOMICALLY_INACTIVE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The company is economically inactive</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="PositionStatusType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing a status of a position.
+				DataType: CodeType
+				Content: String
+				Examples: APPOINTMENT
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:StatusCodeType">
+				<xsd:enumeration value="APPOINTMENT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">A new position</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="UPDATE_TO_EXISTING_APPOINTMENT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">The position changed</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+				<xsd:enumeration value="TERMINATION">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Termination of a position</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="RepresentationType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing a representation of a person (be it a natural or legal one) on behalf of a company.
+				DataType: CodeType
+				Content: String
+				Examples: ALONE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ALONE">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">The person alone is representing the company.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="JOINT">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">The person is part of a joint representation of a company.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="OTHER">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">The person is part of another kind of representation.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="CompanyWebsiteURIType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Unique Resource Identifier of a company website
+				DataType: IdentifierType
+				Content: string
+				Examples: https://www.iso.org/
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="URI" type="URIType"/>
+			<xsd:element name="Fee" type="FeeType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CompanyObjectDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of the object of a company, in textual form.
+				DataType: TextType
+				Content: string
+				Examples: The company sells tools, machinery and supplies destined for woodworking.
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="Description" type="DescriptionType"/>
+			<xsd:element name="Fee" type="FeeType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="CategoryCodeType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="LimitedDescriptionType">
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:minLength value="3"/>
+				<xsd:pattern value=".*[\S].*"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="DescriptionType">
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType">
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="RepresentationDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Description of the representation a natural or legal person has towards a company
+				DataType: TextType
+				Content: string
+				Examples: M. Doe is the single representative of the company
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:extension base="udt:TextType"/>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="UserRoleType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: User role, in textual form.
+				DataType: TextType
+				Content: string
+				Examples: VIP, USER, ADMIN, ...
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:pattern value="[\S]{3,100}"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<!-- Introduced in version 4.0.0 of the BRIS Messaging Model -->
+	<xsd:complexType name="HasCrossBorderDetailsType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: a boolean indicating if a company has cross-border operation(s) linked to it
+				DataType: IndicatorType
+				Content: Boolean
+				Examples: 1, 0, true, false
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="cbc:IndicationIndicatorType" />
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="RegisterDescriptionType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Register description, in textual form.
+				DataType: TextType
+				Content: string
+				Examples: Register in which the document refer to article 14 are filled-ind
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:pattern value=".*[\S].*"/>
+				<xsd:minLength value="3"/>
+				<xsd:maxLength value="200"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="RegistrationInformationType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registration information, in textual form.
+				DataType: TextType
+				Content: string
+				Examples: Register in which the document refer to article 14 are filled-ind
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:pattern value=".*[\S].*"/>
+				<xsd:minLength value="3"/>
+				<xsd:maxLength value="500"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="StrikingOffInformationType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Registration information, in textual form.
+				DataType: TextType
+				Content: string
+				Examples: Register in which the document refer to article 14 are filled-ind
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:pattern value=".*[\S].*"/>
+				<xsd:minLength value="3"/>
+				<xsd:maxLength value="500"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="WebsiteDetailsType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Details of the website as referred to in Article 86g(3)(D) of Directive (EU)2017/1132.
+				DataType: TextType
+				Content: string
+				Examples: https://new.company.com
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="udt:TextType">
+				<xsd:pattern value=".*[\S].*"/>
+				<xsd:minLength value="10"/>
+				<xsd:maxLength value="500"/>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="MergerTypeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing the type of merger that's happening
+				DataType: CodeType
+				Content: String
+				Examples: WHOLLY_OWNED
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ACQUISITION_ART119_2A">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border merger by acquisition under article 119 (2) point a.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="ACQUISITION_ART119_2D">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border merger by acquisition under article 119 (2) point d.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="FORMATION">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border merger by formation of a new company under article 119 (2) point b.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="WHOLLY_OWNED">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border merger of wholly owned company under article 119 (2) point c.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="DivisionTypeType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing the type of division that's happening
+				DataType: CodeType
+				Content: String
+				Examples: PARTIAL_DIVISION
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="FULL_DIVISION">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border full division under point a of article 160b (4).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="PARTIAL_DIVISION">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border partial division under point b of article 160b (4).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+			<xsd:enumeration value="DIVISION_BY_SEPARATION">
+				<xsd:annotation>
+					<xsd:documentation xml:lang="en">Cross-border division by separation under point c of article 160b (4).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="IDType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Identifier type
+				Data.Type: IdentifierType
+				Content: String
+				Examples: XXXX111
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IDType">
+				<xsd:minLength value="1" />
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="FurtherInformationRequestType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Value describing the type of requested further information
+				DataType: CodeType
+				Content: String
+				Examples: DATE_OF_DECISION
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="GROUND_FOR_DISQUALIFICATION_UNDER_NATIONAL_LAW"/>
+			<xsd:enumeration value="DATE_OF_DECISION"/>
+			<xsd:enumeration value="PERIOD_OR_VALIDITY_OF_THE_DISQUALIFICATION"/>
+			<xsd:enumeration value="FILE_NUMBER_AND_ISSUER_OF_THE_DECISION"/>
+			<xsd:enumeration value="INFORMATION_ON_ANY_LIMITATION_TO_SUCH_DISQUALIFICATION"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="FileNumberType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Number of the file
+				Data.Type: IdentifierType
+				Content: String
+				Examples: 1-456464-22AZ
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="100" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="IssuerType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Issuer
+				Data.Type: NameType
+				Content: String
+				Examples: Court of Auditors
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:minLength value="1" />
+			<xsd:maxLength value="128" />
+			<!-- TODO validate the pattern using examples -->
+			<xsd:pattern value=".*[\S].*" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<!-- New type for BRIS 6.0 -->
+
+	<xsd:simpleType name="CustomerType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PRIVATE_PERSON"/>
+			<xsd:enumeration value="COMPANY"/>
+			<!-- TODO possibly define other values for Public Administration or Police or whatever -->
+			<xsd:enumeration value="UNDEFINED"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="EmailType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="IPAddressType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LatitudeType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LegalNameType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LegalPersonIdentifierType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="LongitudeType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="NaturalPersonUniqueIdentifier">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="StreetType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="StreetNumberType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="StrengthType">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="EULOGIN"/>
+			<xsd:enumeration value="EID"/>
+			<xsd:enumeration value="REG"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="VATRegistrationType">
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="VATRateType">
+		<xsd:restriction base="xsd:decimal"/>
+	</xsd:simpleType>
+
+	<xsd:element name="WorldwideCountry" type="WorldwideCountryType"/>
+
+	<xsd:complexType name="WorldwideCountryType">
+		<xsd:annotation>
+			<xsd:documentation xml:lang="en">
+				ComponentType: Basic
+				Definition: Country code for users.
+				According to the EU Publication Office [5], country code list uses ISO3166-1 alfa-2.
+				DataType: CodeType
+				Content: String
+				Examples: BE
+			</xsd:documentation>
+		</xsd:annotation>
+		<xsd:simpleContent>
+			<xsd:restriction base="cbc:IdentificationCodeType">
+				<xsd:enumeration value="AF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Afghanistan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Albania</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Algeria</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">American Samoa</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Andorra</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Angola</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Anguilla</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AQ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Antarctica</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Antigua and Barbuda</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Argentina</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Armenia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Aruba</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Australia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Austria</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Azerbaijan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bahamas (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bahrain</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bangladesh</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BB">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Barbados</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Belarus</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Belgium</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Belize</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BJ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Benin</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bermuda</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bhutan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bolivia (Plurinational State of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BQ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bonaire, Sint Eustatius and Saba</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bosnia and Herzegovina</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Botswana</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bouvet Island</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Brazil</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">British Indian Ocean Territory (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Brunei Darussalam</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Bulgaria</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Burkina Faso</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Burundi</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cabo Verde</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cambodia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cameroon</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Canada</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cayman Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Central African Republic (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Chad</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Chile</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">China</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CX">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Christmas Island</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cocos (Keeling) Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Colombia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Comoros (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Congo (the Democratic Republic of the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Congo (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cook Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Costa Rica</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Croatia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cuba</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Curaçao</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Cyprus</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Czechia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Côte d'Ivoire</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Denmark</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DJ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Djibouti</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Dominica</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Dominican Republic (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="EC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ecuador</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="EG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Egypt</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">El Salvador</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GQ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Equatorial Guinea</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ER">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Eritrea</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="EE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Estonia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Eswatini</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ET">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ethiopia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Falkland Islands (the) [Malvinas]</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Faroe Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FJ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Fiji</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Finland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">France</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">French Guiana</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">French Polynesia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">French Southern Territories (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Gabon</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Gambia (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Georgia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="DE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Germany</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ghana</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Gibraltar</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="EL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Greece</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Greenland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Grenada</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GP">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guadeloupe</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guam</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guatemala</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guernsey</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guinea</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guinea-Bissau</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Guyana</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Haiti</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Heard Island and McDonald Islands</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Holy See (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Honduras</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Hong Kong</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="HU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Hungary</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Iceland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">India</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ID">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Indonesia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Iran (Islamic Republic of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IQ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Iraq</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ireland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Isle of Man</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Israel</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="IT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Italy</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="JM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Jamaica</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="JP">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Japan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="JE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Jersey</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="JO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Jordan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Kazakhstan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Kenya</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Kiribati</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KP">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Korea (the Democratic People's Republic of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Korea (the Republic of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Kuwait</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Kyrgyzstan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Lao People's Democratic Republic (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Latvia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LB">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Lebanon</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Lesotho</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Liberia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Libya</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Liechtenstein</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Lithuania</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Luxembourg</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Macao</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Madagascar</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Malawi</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Malaysia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Maldives</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ML">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mali</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Malta</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Marshall Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MQ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Martinique</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mauritania</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mauritius</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="YT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mayotte</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MX">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mexico</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="FM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Micronesia (Federated States of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Moldova (the Republic of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Monaco</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mongolia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ME">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Montenegro</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Montserrat</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Morocco</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Mozambique</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Myanmar</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Namibia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Nauru</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NP">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Nepal</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Netherlands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">New Caledonia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">New Zealand</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Nicaragua</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Niger (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Nigeria</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Niue</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Norfolk Island</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MP">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Northern Mariana Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="NO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Norway</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="OM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Oman</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Pakistan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Palau</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Palestine, State of</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Panama</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Papua New Guinea</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Paraguay</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Peru</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Philippines (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Pitcairn</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Poland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Portugal</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Puerto Rico</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="QA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Qatar</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Republic of North Macedonia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="RO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Romania</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="RU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Russian Federation (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="RW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Rwanda</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="RE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Réunion</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="BL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Barthélemy</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Helena, Ascension and Tristan da Cunha</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="KN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Kitts and Nevis</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Lucia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="MF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Martin (French part)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="PM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Pierre and Miquelon</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saint Vincent and the Grenadines</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="WS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Samoa</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">San Marino</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ST">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sao Tome and Principe</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Saudi Arabia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Senegal</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="RS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Serbia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Seychelles</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sierra Leone</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Singapore</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SX">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sint Maarten (Dutch part)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Slovakia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Slovenia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SB">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Solomon Islands</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Somalia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ZA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">South Africa</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="GS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">South Georgia and the South Sandwich Islands</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SS">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">South Sudan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ES">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Spain</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="LK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sri Lanka</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SD">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sudan (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Suriname</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SJ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Svalbard and Jan Mayen</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Sweden</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="CH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Switzerland</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="SY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Syrian Arab Republic</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Taiwan (Province of China)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TJ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tajikistan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tanzania, United Republic of</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Thailand</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TL">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Timor-Leste</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Togo</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tokelau</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TO">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tonga</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TT">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Trinidad and Tobago</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tunisia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TR">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Turkey</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Turkmenistan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TC">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Turks and Caicos Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="TV">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Tuvalu</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Uganda</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UA">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Ukraine</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">United Arab Emirates (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UK">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">United Kingdom of Great Britain and Northern Ireland (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">United States Minor Outlying Islands (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="US">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">United States of America (the)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UY">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Uruguay</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="UZ">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Uzbekistan</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VU">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Vanuatu</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Venezuela (Bolivarian Republic of)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VN">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Viet Nam</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VG">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Virgin Islands (British)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="VI">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Virgin Islands (U.S.)</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="WF">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Wallis and Futuna</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="EH">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Western Sahara</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="YE">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Yemen</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ZM">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Zambia</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="ZW">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Zimbabwe</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+
+				<xsd:enumeration value="AX">
+					<xsd:annotation>
+						<xsd:documentation xml:lang="en">Åland Islands</xsd:documentation>
+					</xsd:annotation>
+				</xsd:enumeration>
+			</xsd:restriction>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+</xsd:schema>

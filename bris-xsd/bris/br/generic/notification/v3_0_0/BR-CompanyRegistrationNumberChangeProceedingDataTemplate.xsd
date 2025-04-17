@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyRegistrationNumberChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyRegistrationNumberChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="CompanyRegistrationNumberChangeProceedingDataTemplate" type="CompanyRegistrationNumberChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyRegistrationNumberChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="FormerCompanyRegistrationNumber" type="bbc:CompanyRegistrationNumberType" />
+					<xsd:element name="NewCompanyRegistrationNumber" type="bbc:CompanyRegistrationNumberType" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

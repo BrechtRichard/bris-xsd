@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v5_0/br/ConnectivityRequest"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v5_0/br/ConnectivityRequest"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="5.0.0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:element name="BR-ConnectivityRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="bbc:SendingDateTime" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

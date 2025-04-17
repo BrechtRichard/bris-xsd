@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+		xmlns:bacbr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+
+	<xsd:complexType name="CrossBorderNotificationTemplateType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="gn:NotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:IssuanceDateTime" />
+					<xsd:element name="IssuingOrganisation" type="bacbr:BusinessRegisterType" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

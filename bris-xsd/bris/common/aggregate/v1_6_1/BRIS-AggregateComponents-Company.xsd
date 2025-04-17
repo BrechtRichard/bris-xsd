@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+    xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	xmlns:bacdo="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+	xmlns:bacci="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"
+	xmlns:bacbref="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"
+	targetNamespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegisterReference"/>
+
+    <xsd:element name="Company" type="CompanyType" />
+
+	<xsd:complexType name="CompanyType">
+		<xsd:sequence>
+			<xsd:element name="Names" type="QualifiedCompanyNameListType"/>
+
+			<xsd:element ref="bbc:CompanyRegistrationNumber" />
+			<xsd:element ref="bacad:RegisteredOffice" />
+			<xsd:element ref="bbc:LegalFormCode" />
+			<xsd:element ref="bbc:CompanyEUID" />
+
+			<xsd:element name="ChargeableInformation" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:choice minOccurs="0">
+							<xsd:element name="CompanyWebsiteURI" type="bbc:CompanyWebsiteURIType"/>
+							<xsd:element name="CompanyWebsiteDocument" type="bacdo:DocumentType"/>
+						</xsd:choice>
+						<!-- Object of the company -->
+						<xsd:choice minOccurs="0">
+							<xsd:element name="CompanyObjectText" type="bbc:CompanyObjectDescriptionType"/>
+							<xsd:element name="CompanyObjectDocument" type="bacdo:DocumentType"/>
+						</xsd:choice>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="Status" minOccurs="0">
+				<xsd:complexType>
+					<xsd:choice>
+						<xsd:element name="PredefinedStatus" type="bbc:PredefinedStatusType"/>
+						<xsd:element name="OtherStatus">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element ref="bacci:CompanyItem"/>
+									<xsd:element name="StringValue" type="bbc:ParticularStringValueType"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:choice>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="Branches" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Branch" maxOccurs="unbounded">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element ref="bbc:QualifiedBranchName" minOccurs="0"/>
+									<xsd:element ref="bbc:BranchEUID"/>
+									<xsd:element name="BranchRegistrationNumber" type="bbc:CompanyRegistrationNumberType"/>
+									<xsd:element ref="bacbref:BusinessRegisterReference"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="IsBranch" minOccurs="0">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="ParentCompanyEUID" type="bbc:CompanyEUIDType"/>
+						<xsd:element name="QualifiedParentCompanyName" type="bbc:QualifiedCompanyNameType"/>
+						<xsd:element ref="bacbref:BusinessRegisterReference"/>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="QualifiedCompanyNameListType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:QualifiedCompanyName" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:element name="AlternateIdentifiers" type="AlternateIdentifiersType"/>
+
+	<xsd:complexType name="AlternateIdentifiersType">
+		<xsd:sequence>
+			<xsd:element ref="bbc:AlternateID" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+</xsd:schema>

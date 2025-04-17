@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:baccbnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"
+		xmlns:bacbr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"
+		targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"/>
+
+	<xsd:complexType name="CrossBorderForwardedNotificationTemplateType" abstract="true">
+		<xsd:complexContent>
+			<xsd:extension base="baccbnt:CrossBorderNotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element name="RecipientOrganisation" type="bacbr:BusinessRegisterType" />
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

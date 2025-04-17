@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:baccbpcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData"
+	xmlns:baccbpoc="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCertificate"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCertificate"/>
+
+	<xsd:complexType name="SimplePreOperationDataType">
+		<xsd:sequence>
+			<xsd:element name="ProposedCompanyData" type="baccbpcd:CrossBorderProposedCompanyDataType"/>
+			<xsd:element ref="baccbpoc:Certificate"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="PreOperationDataWithMultipleCompaniesType">
+		<xsd:sequence>
+			<xsd:element name="ProposedCompanyData" type="baccbpcd:CrossBorderProposedCompanyDataType" maxOccurs="unbounded"/>
+			<xsd:element ref="baccbpoc:Certificate"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

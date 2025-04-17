@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderAdditionalCompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Document"/>
+
+	<xsd:complexType name="AdditionalCompanyDataType">
+		<xsd:sequence>
+			<xsd:element name="DraftTermsDocument" type="bacd:DocumentType"/>
+			<xsd:element name="OtherLanguageDraftTermsDocument" type="bacd:DocumentType" maxOccurs="unbounded" minOccurs="0"/>
+			<xsd:element name="FinancialStatusDocument" type="bacd:DocumentType" minOccurs="0"/>
+			<xsd:element name="Notice" type="NoticeType"/>
+			<xsd:element name="IndependentExpertReportDocument" type="bacd:DocumentType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="NoticeType">
+		<xsd:sequence>
+			<xsd:element name="CompanyNameCarryingCrossBorderOperation" type="bbc:CompanyNameType"/>
+			<xsd:element name="DeadlineForComments" type="bbc:DateType"/>
+			<xsd:element name="Document" type="bacd:DocumentType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v2_0/br/ChangeLegalFormNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:bacle="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/LegalForm"
+	targetNamespace="http://ec.europa.eu/bris/v2_0/br/ChangeLegalFormNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/LegalForm"/>
+
+	<xsd:element name="ChangeLegalFormNotificationTemplate" type="ChangeLegalFormNotificationTemplateType" substitutionGroup="gn:NotificationTemplate"/>
+
+	<xsd:complexType name="ChangeLegalFormNotificationTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="gn:NotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element ref="bacle:LegalForm"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

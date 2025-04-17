@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:bacbr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:baclr="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"/>
+
+	<xsd:complexType name="CompanyNotificationTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="gn:NotificationTemplateType">
+				<xsd:sequence>
+					<xsd:element ref="bbc:IssuanceDateTime" />
+					<xsd:element name="IssuingOrganisation" type="bacbr:BusinessRegisterType" />
+					<xsd:element name="RecipientOrganisation" type="bacbr:BusinessRegisterType" />
+					<xsd:element ref="baclr:LegislationReferences" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

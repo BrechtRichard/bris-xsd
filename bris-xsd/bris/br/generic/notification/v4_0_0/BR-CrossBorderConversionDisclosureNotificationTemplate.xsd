@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderConversionDisclosureNotificationTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+	xmlns:baccbcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData"
+	xmlns:baccbdpcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData"
+	xmlns:baccbnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"
+	targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderConversionDisclosureNotificationTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderDisclosureProposedCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification"/>
+
+	<xsd:element name="CrossBorderConversionDisclosureNotificationTemplate" substitutionGroup="gn:NotificationTemplate">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="baccbnt:CrossBorderNotificationTemplateType">
+					<xsd:sequence>
+						<xsd:element ref="baccbcd:CrossBorderCompanyData"/>
+						<xsd:element name="ProposedCompanyData" type="baccbdpcd:CrossBorderDisclosureProposedCompanyDataType"/>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

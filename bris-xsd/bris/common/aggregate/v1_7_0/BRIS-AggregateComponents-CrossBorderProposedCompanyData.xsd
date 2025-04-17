@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		xmlns:bacc="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"
+		xmlns:baccbscd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"
+		targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderProposedCompanyData"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderSimplifiedCompanyData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Company"/>
+
+	<xsd:complexType name="CrossBorderProposedCompanyDataType">
+		<xsd:complexContent>
+			<xsd:extension base="baccbscd:CrossBorderSimplifiedCompanyDataType">
+				<xsd:sequence>
+					<xsd:element ref="bacc:AlternateIdentifiers" minOccurs="0"/>
+					<xsd:element name="AcquiringCompanyEUID" type="bbc:CompanyEUIDType" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

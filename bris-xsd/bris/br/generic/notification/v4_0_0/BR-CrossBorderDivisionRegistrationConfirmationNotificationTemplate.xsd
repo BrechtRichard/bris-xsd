@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+		xmlns="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionRegistrationConfirmationNotificationTemplate"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+		xmlns:gn="http://ec.europa.eu/bris/v2_0/br/GenericNotification"
+		xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+		xmlns:baccbrcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderRegistrationCompanyData"
+		xmlns:baccbfnt="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"
+		xmlns:baclr="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"
+		targetNamespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderDivisionRegistrationConfirmationNotificationTemplate"
+		elementFormDefault="qualified"
+		attributeFormDefault="unqualified"
+		version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v2_0/br/GenericNotification" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderRegistrationCompanyData" />
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/LegislationReferences"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v4_0/br/CrossBorderForwardedNotificationTemplate"/>
+
+	<xsd:element name="CrossBorderDivisionRegistrationConfirmationNotificationTemplate"
+				 substitutionGroup="gn:NotificationTemplate">
+		<xsd:complexType>
+			<xsd:complexContent>
+				<xsd:extension base="baccbfnt:CrossBorderForwardedNotificationTemplateType">
+					<xsd:sequence>
+						<xsd:element name="DivisionRelatedData">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element ref="bbc:EffectiveDate"/>
+									<xsd:element name="DivisionType" type="bbc:DivisionTypeType"/>
+									<xsd:element ref="baclr:LegislationReferences" minOccurs="0"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+
+						<xsd:element name="CrossBorderCompanyData" type="baccbrcd:CrossBorderRegistrationCompanyDataType"/>
+
+						<xsd:element name="DivisionCompanyDataList">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="DivisionCompanyData" type="baccbrcd:CrossBorderRegistrationCompanyDataType" maxOccurs="unbounded"/>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:extension>
+			</xsd:complexContent>
+		</xsd:complexType>
+	</xsd:element>
+
+</xsd:schema>

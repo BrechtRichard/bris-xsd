@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Particular"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:bacci="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"
+    xmlns:bacad="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	targetNamespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Particular"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Addresses"/>
+    <xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/CompanyItem"/>
+
+	<xsd:element name="Particulars">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Particular" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="bacci:CompanyItem" />
+                            <xsd:choice>
+                                <xsd:element ref="bbc:ParticularStringValue" />
+                                <xsd:element ref="bbc:ParticularDateValue" />
+                                <xsd:element ref="bbc:ParticularIntegerValue" />
+                                <xsd:element ref="bbc:ParticularDecimalValue" />
+                                <xsd:element ref="bbc:ParticularAmountValue" />
+                                <xsd:element ref="bbc:ParticularBooleanValue" />
+                                <xsd:element name="ParticularAddressValue" type="bacad:AddressType" />
+                            </xsd:choice>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>

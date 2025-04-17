@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v3_0/br/CompanyLegalPersonDocumentChangeProceedingDataTemplate"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:ucnt="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+	xmlns:bacpd="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/PersonalData"
+	xmlns:bacre="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"
+	targetNamespace="http://ec.europa.eu/bris/v3_0/br/CompanyLegalPersonDocumentChangeProceedingDataTemplate"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v3_0/br/UpdateParentCompanyNotificationTemplate"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/PersonalData"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_6/common/AggregateComponents/Representation"/>
+
+	<xsd:element name="CompanyLegalPersonDocumentChangeProceedingDataTemplate" type="CompanyLegalPersonDocumentChangeProceedingDataTemplateType" substitutionGroup="ucnt:ProceedingDataTemplate"/>
+
+	<xsd:complexType name="CompanyLegalPersonDocumentChangeProceedingDataTemplateType">
+		<xsd:complexContent>
+			<xsd:extension base="ucnt:ProceedingDataTemplateType">
+				<xsd:sequence>
+					<xsd:element name="AdditionalData" minOccurs="0" maxOccurs="unbounded" type="LegalPersonDataType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+
+	<xsd:complexType name="LegalPersonDataType">
+		<xsd:complexContent>
+			<xsd:extension base="bacpd:PersonalDataType">
+				<xsd:sequence>
+					<xsd:element name="NationalPersonalIdentificationNumber" type="bbc:NationalPersonalIdentificationNumberType" minOccurs="0"/>
+					<xsd:element ref="bbc:CompanyName"/>
+					<xsd:choice>
+						<xsd:element ref="bbc:CompanyRegistrationNumber"/>
+						<xsd:element ref="bbc:CompanyEUID"/>
+					</xsd:choice>
+					<xsd:element ref="bbc:CompanyLegalForm"/>
+					<xsd:element name="Representation" type="bacre:AttachedDocumentRepresentationType"/>
+				</xsd:sequence>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+</xsd:schema>

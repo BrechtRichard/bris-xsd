@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCompanyData"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:baccbcd="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData"
+	targetNamespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderPreOperationCompanyData"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_7/common/AggregateComponents/CrossBorderExtendedCompanyData" />
+
+	<xsd:complexType name="SimpleCrossBorderPreOperationCompanyDataType">
+		<xsd:sequence>
+			<xsd:element ref="baccbcd:CrossBorderExtendedCompanyData"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

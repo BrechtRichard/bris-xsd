@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema
+	xmlns="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Notification/Context"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:bbc="http://ec.europa.eu/bris/v1_4/common/BasicComponents"
+    xmlns:bacbr="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"
+	targetNamespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/Notification/Context"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified"
+	version="0">
+
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_4/common/BasicComponents"/>
+	<xsd:import namespace="http://ec.europa.eu/bris/v1_5/common/AggregateComponents/BusinessRegister"/>
+
+	<xsd:element name="NotificationContext">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="LegislationReferences">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="bbc:LegislationReference" maxOccurs="unbounded" />
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+				<xsd:element name="IssuingOrganisation" type="bacbr:BusinessRegisterType" />
+				<xsd:element ref="bbc:IssuanceDateTime" />
+                <xsd:element ref="bbc:EffectiveDate" />
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+
+</xsd:schema>
